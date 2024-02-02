@@ -13,12 +13,12 @@ body {
 }
 
 .container {
-    max-width: 600px;
+    max-width: 400px;
     background-color: #363636;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-    text-align: left;
+    text-align: center;
 }
 
 h1 {
@@ -26,14 +26,44 @@ h1 {
     margin-bottom: 20px;
 }
 
-ul {
-    list-style: none;
-    padding: 0;
+form {
+    display: flex;
+    flex-direction: column;
 }
 
-li {
-    margin: 10px 0;
+label {
     color: #ccc;
+    margin-bottom: 5px;
+}
+
+input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #444;
+    color: #fff;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #61dafb;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4fa3d1;
+}
+
+a {
+    color: #61dafb;
+}
+
+a:hover {
+    color: #4fa3d1;
 }
 
 .error-message {
