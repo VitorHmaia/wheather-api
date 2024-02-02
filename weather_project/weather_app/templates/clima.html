@@ -6,18 +6,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dados Climáticos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/weather_app/styles.css">
 </head>
 <body>
-    <h1>Dados Climáticos para {{ cidade }}</h1>
+    <div class="card">
+        <h1>Dados Climáticos para {{ cidade }}</h1>
 
-    {% if dados_climaticos %}
-        <p>Temperatura: {{ dados_climaticos.main.temp }}°C</p>
-        <p>Pressão Atmosférica: {{ dados_climaticos.main.pressure }} hPa</p>
-        <p>Umidade do Ar: {{ dados_climaticos.main.humidity }}%</p>
-        <p>Índice de Precipitação: {{ dados_climaticos.precipitation.index }}</p>
-        <p>Condição Meteorológica: {{ dados_climaticos.weather.0.description }}</p>
-    {% else %}
-        <p>Erro ao obter dados climáticos.</p>
-    {% endif %}
+        {% if dados_climaticos %}
+            <ul>
+                <li>Temperatura: {{ dados_climaticos.main.temp }}°C</li>
+                <li>Pressão Atmosférica: {{ dados_climaticos.main.pressure }} hPa</li>
+                <li>Umidade do Ar: {{ dados_climaticos.main.humidity }}%</li>
+                <li>Índice de Precipitação: {{ dados_climaticos.precipitation.index }}</li>
+                <li>Condição Meteorológica: {{ dados_climaticos.weather.0.description }}</li>
+            </ul>
+            <form action="./login.html">
+                <button type="submit" class="exit-button">Sair</button>
+            </form>
+        {% else %}
+            <p class="error-message">Erro ao obter dados climáticos.</p>
+        {% endif %}
+    </div>
 </body>
 </html>
