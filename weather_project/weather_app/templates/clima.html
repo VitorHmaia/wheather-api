@@ -1,0 +1,23 @@
+<!-- clima.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados Climáticos</title>
+</head>
+<body>
+    <h1>Dados Climáticos para {{ cidade }}</h1>
+
+    {% if dados_climaticos %}
+        <p>Temperatura: {{ dados_climaticos.main.temp }}°C</p>
+        <p>Pressão Atmosférica: {{ dados_climaticos.main.pressure }} hPa</p>
+        <p>Umidade do Ar: {{ dados_climaticos.main.humidity }}%</p>
+        <p>Índice de Precipitação: {{ dados_climaticos.precipitation.index }}</p>
+        <p>Condição Meteorológica: {{ dados_climaticos.weather.0.description }}</p>
+    {% else %}
+        <p>Erro ao obter dados climáticos.</p>
+    {% endif %}
+</body>
+</html>
