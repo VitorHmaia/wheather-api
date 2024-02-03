@@ -1,3 +1,9 @@
-from django.shortcuts import render
+# weather_api/views.py
 
-# Create your views here.
+from rest_framework import generics
+from .models import WeatherData
+from .serializers import WeatherDataSerializer
+
+class WeatherDataListCreateView(generics.ListCreateAPIView):
+    queryset = WeatherData.objects.all()
+    serializer_class = WeatherDataSerializer
